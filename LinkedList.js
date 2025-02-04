@@ -138,13 +138,13 @@ class LinkedList {
    *  - Output should appear as: "JohnDoe, JaneDoe"
    */
   displayStudents() {
-    let current = this.head; //Starts from the head of the list
     let result = []; //Store students in an array
+    let current = this.head; //Starts from the head of the list
     while(current){
       result.push(current.data.getName()); //Put students names in the array
       current = current.next; //Move to the next student in list
     }
-    return result.join(", "); //Join method converts result in a string, separating names with a comma and space
+    return result.join(', '); //Join method converts result in a string, separating names with a comma and space
   }
 
   /**
@@ -170,8 +170,9 @@ class LinkedList {
    * - Use sortStudentsByName()
    */
   filterBySpecialization(specialization) {
-    const filteredStudents = [];
+    let filteredStudents = [];
     let current = this.head;
+    
     while(current){
       if(current.data.getSpecialization() === specialization){
         filteredStudents.push(current.data);

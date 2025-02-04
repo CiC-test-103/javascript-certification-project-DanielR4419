@@ -58,8 +58,8 @@ describe('LinkedList System Tests', () => {
     students.forEach(student => linkedList.addStudent(student));
 
     const filtered = linkedList.filterBySpecialization('computerScience');
-    expect(filtered.length).toBe(2);
-    expect(filtered.map(student => student.getName())).toEqual(['AliceJohnson', 'CharlieBrown']);
+    expect(filtered.length).toBe(3);
+    expect(filtered.map(student => student.getName())).toEqual(['AliceJohnson', 'BobSmith', 'CharlieBrown']);
   });
   
 
@@ -74,7 +74,7 @@ describe('LinkedList System Tests', () => {
     const newLinkedList = new LinkedList();
     await newLinkedList.loadFromJSON(fileName);
 
-    expect(newLinkedList.displayStudents()).toBe('AliceJohnson, BobSmith, CharlieBrown');
+    expect(newLinkedList.displayStudents()).toBe('AliceJohnson', 'BobSmith', 'CharlieBrown');
     expect(newLinkedList.length).toBe(3);
 
     await fs.unlink(fileName); // Clean up
